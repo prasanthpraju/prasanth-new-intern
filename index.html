@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz game</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 50%; margin: auto; padding: 20px; }
+        .question { font-size: 20px; margin-bottom: 10px; }
+        .options { display: flex; flex-direction: column; gap: 10px; }
+        button { padding: 10px; cursor: pointer; border-radius: 5px; }
+        .correct { background-color: lightgreen; }
+        .wrong { background-color: lightcoral; } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Quiz game</h2>
+        <div id="quiz-container">
+            <p id="question" class="question"></p>
+            <div id="options" class="options"></div>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        let score = 0;   
+        let currentQuestionIndex = 0;
+        let questions = [];
+
+        async function fetchQuestions() {
+            try {
+                let response = await fetch('https://opentdb.com/api.php?amount=5&type=multiple');
+                let data = await response.json();
+                questions = data.results.map(q => ({
+                    question: q.question,
+                    correct: q.correct_answer,
+                    options: [...q.incorrect_answers, q.correct_answer].sort(() => Math.random() - 0.5)
+                }));
+                displayQuestion();
+            } catch (error) {
+                console.error('Error fetching questions:', error);
+            }
+        }
+
+        function displayQuestion() {
+            if (currentQuestionIndex >= questions.length) {
+                document.getElementById('quiz-container').innerHTML = `<h2>Quiz Over! Final Score: ${score}</h2>`;
+                return;
+            }
+            
+            let currentQuestion = questions[currentQuestionIndex];
+            document.getElementById('question').innerHTML = currentQuestion.question;
+            let optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+
+            currentQuestion.options.forEach(option => {
+                let button = document.createElement('button');
+                button.textContent = option;
+                button.addEventListener('click', (e) => checkAnswer(e, option));
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(event, selectedAnswer) {
+            let correctAnswer = questions[currentQuestionIndex].correct;
+            if (selectedAnswer === correctAnswer) {
+                event.target.classList.add('correct');
+                score++;
+            } else {
+                event.target.classList.add('wrong');
+            }
+            document.getElementById('score').textContent = score;
+            setTimeout(() => {
+                currentQuestionIndex++;
+                displayQuestion();
+            }, 1000);
+        }
+
+        fetchQuestions();
+    </script>
+</body>
+</html>
