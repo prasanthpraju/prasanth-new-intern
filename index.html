@@ -1,0 +1,405 @@
+You said:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <!-- header section -->
+     <header class="header">
+        <a href="#" class="logo">
+            <img src="img/vecteezy_3d-realistic-coffee-cup-coffee-cup-cartoon_21049268.png " width="100px">
+        </a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#products">Products</a>
+            <a href="#review">Review</a> 
+            <a href="#contact">Contact</a>
+            <a href="#blogs">Blogs</a>
+        </nav>
+        
+        
+        
+        
+
+        <div class="icons">
+            <!-- <div class="fas fa-search" id="search-btn"></div> -->
+            
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <a href="login/login.html">
+                <div class="fas fa-user">  </div>
+              </a>
+        </div>
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+
+        </div>
+
+       
+
+     </header>
+
+
+     <!-- home section -->
+      <section class="home" id="home">
+        <div class="content">
+            <h3>fresh Coffee in the morning</h3>
+            <p><p>Nothing beats the aroma of fresh coffee to start your morning right.  
+                Every cup brings joy, warmth, and a little boost to your day.</p>
+                </p>
+            <!-- <a href="" class="btn"> get yours now</a> -->
+
+        </div>
+
+      </section>
+
+      <!-- about sec -->
+
+      <section class="about" id="about">
+        <h1 class="heading"><span>about </span>us</h1>
+        <div class="row">
+            <div class="image">
+                <img src="img/Each bean, a storyteller_ Every sip, a chapter_.jpg"   class="img" alt="">
+            </div>
+            <div class="content">
+                <h2>what makes our coffee special?</h2>
+                <p>What makes our coffee truly special is the perfect harmony of passion, quality, and craftsmanship. We source our beans from the finest coffee farms, ensuring only the richest and most aromatic blends reach your cup. Every step—from roasting to brewing—is handled with precision and love to deliver a full-bodied flavor and a captivating aroma that lingers. Our baristas pour not just coffee, but heart and warmth into every cup, turning your daily sip into a delightful experience. It’s not just coffee—it’s a moment of joy, comfort, and connection.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero possimus ducimus non repellendus aliquam! Ab saepe eveniet enim veniam obcaecati!</p>
+                
+            </div>
+
+        </div>
+
+      </section>
+      
+
+
+      <!-- menu sec -->
+       <section class="menu" id="menu">
+        <h1 class="heading">our <span>menu</span></h1>
+        <div class="box-container" id="productsContainer">
+                 
+        </div>
+    </section>
+    
+    <!-- products section -->
+<section class="products" id="products">
+    <h1 class="heading">our <span>products</span></h1>
+    <div class="box-container">
+        
+        <div class="box">
+            <img src="img/pro/DIY Starbucks Caramel Brulée Latte (SO Easy & Delicious!).jpg" alt="">
+            <h3>Classic Coffee</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i> 
+            </div>
+            <p class="info">
+                <span class="views"><i class="fas fa-eye"></i> 350 views</span>
+                <span class="likes" onclick="increaseLike(this)"><i class="fas fa-heart"></i> <span>120</span> likes</span>
+            </p>
+            <div class="price">$12.99 <span>$15.99</span></div>
+    
+        </div>
+
+        <div class="box">
+            <img src="img/pro/Elevate Your Coffee Game with Doludi Bhask's Luxe Specialty Coffee.jpg" alt="">
+            <h3>Espresso Shot</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i> 
+            </div>
+            <p class="info">
+                <span class="views"><i class="fas fa-eye"></i> 420 views</span>
+                <span class="likes" onclick="increaseLike(this)"><i class="fas fa-heart"></i> <span>150</span> likes</span>
+            </p>
+            <div class="price">$9.99 <span>$12.99</span></div>
+        
+        </div>
+
+        <div class="box">
+            <img src="img/pro/Indulge in Luxury_ Robusta Roast Coffee Experience.jpg" alt="">
+            <h3>Caramel Latte</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i> 
+            </div>
+            <p class="info">
+                <span class="views"><i class="fas fa-eye"></i> 280 views</span>
+                <span class="likes" onclick="increaseLike(this)"><i class="fas fa-heart"></i> <span>100</span> likes</span>
+            </p>
+            <div class="price">$14.99 <span>$18.99</span></div>
+        
+        </div>
+
+        <div class="box">
+            <img src="img/pro/Indulge in Redback Gourmet Coffee's Food Comic Delectable_ Expertly Roasted Coffee Beans.jpg" alt="">
+            <h3>Mocha Delight</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i> 
+            </div>
+            <p class="info">
+                <span class="views"><i class="fas fa-eye"></i> 500 views</span>
+                <span class="likes" onclick="increaseLike(this)"><i class="fas fa-heart"></i> <span>180</span> likes</span>
+            </p>
+            <div class="price">$16.99 <span>$20.99</span></div>
+    
+        </div>
+
+        <div class="box">
+            <img src="img/pro/Indulge in the Perfect Cup of Coffee from the….jpg" alt="">
+            <h3>Cappuccino</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i> 
+            </div>
+            <p class="info">
+                <span class="views"><i class="fas fa-eye"></i> 310 views</span>
+                <span class="likes" onclick="increaseLike(this)"><i class="fas fa-heart"></i> <span>130</span> likes</span>
+            </p>
+            <div class="price">$11.99 <span>$14.99</span></div>
+        
+        </div>
+
+        <div class="box">
+            <img src="img/pro/Indulge in the Rich Flavors of Reol Coffee - Specialty Beans for Coffee Lovers.jpg" alt="">
+            <h3>Hazelnut Coffee</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i> <!-- 4 stars -->
+            </div>
+            <p class="info">
+                <span class="views"><i class="fas fa-eye"></i> 280 views</span>
+                <span class="likes" onclick="increaseLike(this)"><i class="fas fa-heart"></i> <span>115</span> likes</span>
+            </p>
+            <div class="price">$13.99 <span>$17.99</span></div>
+            
+        </div>
+
+        <div class="box">
+            <img src="img/pro/Rich  Indulgent Warienqun Espresso Roast_ Artisanal Coffee Blend with Dark Chocolate  Sp.jpg" alt="">
+            <h3>French Vanilla</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i> <!-- 3.5 stars -->
+            </div>
+            <p class="info">
+                <span class="views"><i class="fas fa-eye"></i> 290 views</span>
+                <span class="likes" onclick="increaseLike(this)"><i class="fas fa-heart"></i> <span>125</span> likes</span>
+            </p>
+            <div class="price">$14.49 <span>$19.99</span></div>
+        
+        </div>
+
+        <div class="box">
+            <img src="img/pro/Steeped in Perfection_ Hallie's Java Specialty Coffee Blend with Golden Fern Design.jpg" alt="">
+            <h3>Dark Roast</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i> <!-- 4 stars -->
+            </div>
+            <p class="info">
+                <span class="views"><i class="fas fa-eye"></i> 270 views</span>
+                <span class="likes" onclick="increaseLike(this)"><i class="fas fa-heart"></i> <span>110</span> likes</span>
+            </p>
+            <div class="price">$10.99 <span>$13.99</span></div>
+            
+        </div>
+
+    </div>
+</section>
+   
+<!-- review -->
+    
+    <section class="review" id="review">
+    <div class="review-section">
+        <h2>Customer <span> Reviews</span></h2>
+
+        <div class="review-container">
+            <div class="review-card">
+                <img src="img/pro/rev/Today is my birthday 🎉 I am also a beautiful princess and I love my hairstyle 🥲.jpg" alt="Customer 1">
+                <div class="review-content">
+                    <h4>John Doe</h4>
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">Amazing service and delicious cakes! The quality is top-notch. Highly recommend to everyone.</p>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <img src="img/pro/rev/Premium Photo _ My love is all yours shot of an affectionate young couple bonding together outdoors.jpg" alt="Customer 2">
+                <div class="review-content">
+                    <h4>Emily Smith</h4>
+                    <div class="star-rating">★★★★☆</div>
+                    <p class="review-text">Great experience overall! The design of the cakes is perfect. Love the packaging and delivery.</p>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <img src="img/pro/rev/Business man in a suit white transparent background _ Premium AI-generated image.jpg" alt="Customer 3">
+                <div class="review-content">
+                    <h4>Michael Brown</h4>
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">Absolutely loved the cakes! The texture is super soft. Will order again for sure!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </section>
+
+
+<!-- contact -->
+
+<section class="contact" id="contact">
+    <h2>Contact <span>us</span></h2>
+    <div class="contact-container"> 
+        <!-- Contact Form -->
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            <p><i class="fas fa-envelope"></i> support@soulandsugar.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Ooty, Tamil Nadu, India</p>
+        </div>
+    </div>
+
+    <!-- Google Maps Location -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15684.366943603242!2d76.69503256977537!3d11.410204364148024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8b1c7e29c8f8b%3A0x8f3b1d2b8b9b8d1e!2sOoty%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1711376400000" 
+            width="100%" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+ 
+<!-- Blogs Section -->
+<section class="blogs" id="blogs">
+    <h2>Our <span>Blogs</span></h2>
+    <div class="blogs-container">
+
+        <div class="blog-card">
+            <img src="img/prj/Kalibre - Barista 2.jpg" alt="Blog 1">
+            <div class="blog-content">
+                <h3>The Art of Brewing the Perfect Coffee</h3>
+                <p>Learn how to brew the best coffee at home with expert techniques and secret tips.</p>
+                <!-- <a href="#" class="read-more">Read More</a> -->
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/prj/manmakecoffee.jpg" alt="Blog 2">
+            <div class="blog-content">
+                <h3>Top 5 Coffee Trends in 2025</h3>
+                <p>From Dalgona to Nitro Cold Brew – discover the hottest coffee trends this year.</p>
+                <!-- <a href="#" class="read-more">Read More</a> -->
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/prj/NEW.avif" alt="Blog 3">
+            <div class="blog-content">
+                <h3>Health Benefits of Drinking Coffee Daily</h3>
+                <p>Explore how coffee can boost your energy, improve focus, and support a healthy lifestyle.</p>
+                <!-- <a href="#" class="read-more">Read More</a> -->
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h3>Coffee Haven</h3>
+            <p>Your daily dose of freshly brewed coffee and warm moments.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            <p><i class="fas fa-envelope"></i> support@coffeehaven.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Ooty, Tamil Nadu, India</p>
+        </div>
+
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Coffee Haven | All Rights Reserved</p>
+    </div>
+</footer>
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+ 
