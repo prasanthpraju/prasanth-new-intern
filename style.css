@@ -7,7 +7,7 @@
 
     
 }
-
+/* 
 *{
     font-family:'Roboto',sans-serif;
     margin: 0;padding: 0;
@@ -16,7 +16,7 @@
     text-decoration: none;
     text-transform: capitalize;
     transition: 0.1s linear;
-}
+} */
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -101,21 +101,7 @@ header{
     transform-origin: top;
 }
 
-/* Search Form Hide/Show */
-.search-form {
-    position: absolute;
-    top: 115%; 
-    right: 7%;
-    background: #fff;
-    width: 30%;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: all 0.3s ease;
-    z-index: 1001;
-}
+ 
 
 .search-form.active {
     transform: scaleY(1);
@@ -196,7 +182,7 @@ header{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url(img/IMG_2011.JPG);
+    background: url(images/WhatsApp\ Image\ 2025-04-06\ at\ 10.03.11\ PM.jpeg);
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -212,7 +198,7 @@ h3{
     
 } 
 p{
-    font-size: 3.3rem;
+    font-size: 2.3rem;
     font-weight: lighter;
     line-height: 1.8;
     padding: 1rem 0;
@@ -287,8 +273,8 @@ p{
 
 .about .row .content p {
     color: #fff;
-    font-weight: bold;
-    font-size: 1.4rem;
+    /* font-weight: bold; */
+    font-size: 2rem;
     line-height: 1.6;
     text-align: justify;
     margin-bottom: 1.5rem;

@@ -234,6 +234,18 @@
     </div>
 
     <script>
+       
+       document.addEventListener("DOMContentLoaded", () => {
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (!loggedInUser) {
+        // Not logged in? Redirect to login
+        window.location.href = "../login/login.html";
+    }
+});
+
+
+
         function logout() {
             localStorage.removeItem("loggedInUser");
             window.location.href = "../index.html"; // Redirect after logout
@@ -251,7 +263,7 @@
                     console.log("hbf", product);
                     const card = `
                         <div class="product-card">
-                            <img src="${product.image || 'https://via.placeholder.com/250'}" alt="${product.name}">
+                            <img src="../${product.image || 'https://via.placeholder.com/250'}" alt="${product.name}">
                             <h3>${product.name}</h3>
                             <p>Price: $${product.price}</p>
                             <p>Stock: ${product.stock}</p>
@@ -280,6 +292,7 @@
         document.getElementById("productsContainer").addEventListener("click", async (event) => {
             if (event.target.classList.contains("add-to-cart")) {
                 const productId = event.target.getAttribute("data-id");
+                console.log(productId)
                 const loggedUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
                 console.log("Adding product to cart...");
@@ -316,6 +329,7 @@
                 // Fetch all cart items
                 const response = await fetch("http://localhost:5000/addToCart");
                 const cartData = await response.json();
+                console.log(cartData,response,"cart")
 
                 // Filter items for the logged-in user
                 const userCartItems = cartData.filter(item => item.userId === loggedUser.id);
@@ -340,7 +354,7 @@
                 productDetails.forEach(product => {
                     const item = `
                 <div class="cart-item">
-                    <img src="${product.image}" alt="${product.name}">
+                    <img src="../${product.image}" alt="${product.name}">
                     <p>${product.name} - $${product.price}</p>
                     <div class="fas fa-close remove-item" data-product-id="${product.id}"></div>
                 </div>
@@ -375,7 +389,11 @@
                 try {
                     // Fetch the cart item ID
                     const response = await fetch(`http://localhost:5000/addToCart?userId=${loggedUser.id}&productId=${productId}`);
-                    
+                    if (!loggedUser || !loggedUser.id || !productId) {
+    alert("Missing user or product information.");
+    return;
+}
+
                     if (!response.ok) {
                         throw new Error(`Failed to fetch cart item: ${response.statusText}`);
                     }

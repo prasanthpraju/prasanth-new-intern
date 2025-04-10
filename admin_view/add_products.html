@@ -112,6 +112,15 @@
     </div>
 
     <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (!loggedInUser) {
+        // Not logged in? Redirect to login
+        window.location.href = "../login/login.html";
+    }
+});
         document.getElementById("image").addEventListener("change", function(event) {
             const file = event.target.files[0];
             if (file) {
@@ -137,22 +146,27 @@
                 alert("Please select an image!");
                 return;
             }
-        
-            const reader = new FileReader();
-            reader.readAsDataURL(imageInput.files[0]);
-        
-            reader.onload = async function() {
-                const imageBase64 = reader.result;
-                const product = { name, price, stock, image: imageBase64 };
+         const imageFile = imageInput.files[0];
+    const imageName = imageFile.name; 
+
+    const product = {
+        name,
+        price,
+        stock,
+        image: `images/${imageName}` // Path to be used in frontend
+    };
+
+
+           
 
                 await fetch("http://localhost:5000/products", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(product),
                 });
-
+alert("product added successfully!");
                 window.location.href = "http://127.0.0.1:5500/admin_view/all_products.html"; // Redirect after adding
-            };
+            
         });
     </script>
 
